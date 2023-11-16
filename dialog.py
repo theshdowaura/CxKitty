@@ -68,7 +68,7 @@ def login(tui_ctx: Console, api: ChaoXingAPI):
             api.qr_get()
             qr = QRCode()
             qr.add_data(api.qr_geturl())
-            qr.print_ascii()  # 打印二维码到终端
+            qr.print_ascii(invert=True)  # 打印二维码到终端
             tui_ctx.print("[yellow]等待扫描")
             flag_scanned = False
             # 开始轮询二维码状态
