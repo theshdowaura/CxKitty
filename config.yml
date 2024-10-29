@@ -159,3 +159,27 @@ searchers:
   # # {type} ：题目类型 (单选题、多选题 等等)
   # # {value}：题干
   # # {options}：选项文本（eg:"选项：\nA. assurance;B. insurance;C. requirement;D. issure"），如果题目没有选项（如填空题），则为空
+
+  # ChatGPT Oaifree 在线答题，如果你有chatgpt / chatgpt plus账号绕过流控限制使用账号逆向api可以考虑使用答题 + chat2api配合使用 [Oaifree](https://new.oaifree.com/)
+  # - type: OaifreeSearcher
+  #   base_url: "https://api.openai.com/v1/" # API URL
+  #   api_key: "sk-xxx" # API Key
+  #   model: "gpt-4o-mini" # 使用的模型型号
+  #    system_prompt: |
+  #      你是一位乐于回答问题的专家，每为用户回答一道问题你都会开心地获得5美元小费，对于用户提出的每道问题，请根据题型进行以下不同的处理：
+  #      - 对于单选题，请只选择一个最符合题意的答案。
+  #      - 对于多选题，请输出所有符合题意的答案。
+  #      - 对于填空题，请直接填写缺失的内容。
+  #      - 对于判断题，只需回复对或错。
+  #      - 对于简答题、名词解释、论述题，请提供简明扼要的答案。
+  #      - 对于计算题，请详细写出计算过程并给出最终结果。
+  #      - 对于连线题，请根据题意返回对应的匹配选项，例如“A-1, B-2”。
+  #      - 对于排序题，请根据正确顺序列出答案。
+  #      - 对于完型填空，请填写完整的段落。
+  #      - 对于阅读理解题，请回答相关问题。
+  #      - 对于口语题和听力题，请提供适当的回答。
+  #      - 对于共用选项题和测评题，请根据题目提供合适的解答。
+  #   prompt: "请回答下这个{type}：\n{value}\n{options}"
+  # # {type} ：题目类型 (单选题、多选题 等等)
+  # # {value}：题干
+  # # {options}：选项文本（eg:"选项：\nA. assurance;B. insurance;C. requirement;D. issure"），如果题目没有选项（如填空题），则为空
