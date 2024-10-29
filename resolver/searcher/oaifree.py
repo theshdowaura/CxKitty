@@ -13,7 +13,7 @@ class OaifreeSearcherAPI(SearcherBase):
     def __init__(self, **config) -> None:
         super().__init__()
         self.config = config
-        self.logger = Logger("OllamaSearcherAPI")
+        self.logger = Logger("OaifreeSearcherAPI")
 
     def invoke(self, question: QuestionModel) -> SearcherResp:
         # 将选项从 JSON 转换成人类易读的形式
